@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإعدادات - MK Local Brand</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-dashboard">
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <span class="logo-text">MK</span>
+                    <div class="logo-underline"></div>
+                </div>
+                <span class="brand-name">Local Brand</span>
+            </div>
+            
+            <nav class="admin-nav">
+                <a href="dashboard.html">الرئيسية</a>
+                <a href="products.html">المنتجات</a>
+                <a href="orders.html">الطلبات</a>
+                <a href="inventory.html">المخزون</a>
+                <a href="settings.html" class="active">الإعدادات</a>
+                <a href="#" onclick="AdminAuth.adminLogout()" class="admin-logout">خروج</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Admin Content -->
+    <main class="admin-content">
+        <div class="container">
+            <div class="settings-container">
+                <h1 class="page-title">إعدادات لوحة التحكم</h1>
+                
+                <!-- Settings Tabs -->
+                <div class="settings-tabs">
+                    <button class="tab-btn active" data-tab="general">الإعدادات العامة</button>
+                    <button class="tab-btn" data-tab="security">الأمان</button>
+                    <button class="tab-btn" data-tab="notifications">الإشعارات</button>
+                    <button class="tab-btn" data-tab="appearance">المظهر</button>
+                    <button class="tab-btn" data-tab="storage">التخزين</button>
+                </div>
+
+                <!-- General Settings -->
+                <div class="settings-tab active" id="general-tab">
+                    <div class="settings-section">
+                        <h3>معلومات المتجر</h3>
+                        <form id="store-info-form" class="settings-form">
+                            <div class="form-group">
+                                <label for="store-name">اسم المتجر</label>
+                                <input type="text" id="store-name" name="store-name" value="MK Local Brand" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="store-description">وصف المتجر</label>
+                                <textarea id="store-description" name="store-description" rows="3">متجر ملابس محلي متخصص في تقديم أحدث صيحات الموضة بجودة عالية</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="store-phone">رقم الهاتف</label>
+                                <input type="tel" id="store-phone" name="store-phone" value="0501234567">
+                            </div>
+                            <div class="form-group">
+                                <label for="store-email">البريد الإلكتروني</label>
+                                <input type="email" id="store-email" name="store-email" value="info@mklocalbrand.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="store-address">العنوان</label>
+                                <input type="text" id="store-address" name="store-address" value="الرياض، المملكة العربية السعودية">
+                            </div>
+                            <button type="submit" class="btn btn-primary">حفظ التغييرات</button>
+                        </form>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>إعدادات الطلبات</h3>
+                        <form id="order-settings-form" class="settings-form">
+                            <div class="form-group">
+                                <label for="order-prefix">بادئة رقم الطلب</label>
+                                <input type="text" id="order-prefix" name="order-prefix" value="ORD-" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="min-order-amount">الحد الأدنى للطلب</label>
+                                <input type="number" id="min-order-amount" name="min-order-amount" value="100" min="0" step="0.01">
+                                <small class="form-help">الحد الأدنى لمبلغ الطلب بالريال السعودي</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="delivery-fee">رسوم التوصيل</label>
+                                <input type="number" id="delivery-fee" name="delivery-fee" value="25" min="0" step="0.01">
+                                <small class="form-help">رسوم التوصيل بالريال السعودي</small>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="auto-confirm" name="auto-confirm">
+                                <label for="auto-confirm">تأكيد الطلبات تلقائياً</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">حفظ التغييرات</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Security Settings -->
+                <div class="settings-tab" id="security-tab">
+                    <div class="settings-section">
+                        <h3>تغيير كلمة المرور</h3>
+                        <form id="change-password-form" class="settings-form">
+                            <div class="form-group">
+                                <label for="current-password">كلمة المرور الحالية</label>
+                                <input type="password" id="current-password" name="current-password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-password">كلمة المرور الجديدة</label>
+                                <input type="password" id="new-password" name="new-password" minlength="6" required>
+                                <small class="form-help">يجب أن تكون كلمة المرور 6 أحرف على الأقل</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">تأكيد كلمة المرور الجديدة</label>
+                                <input type="password" id="confirm-password" name="confirm-password" minlength="6" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">تغيير كلمة المرور</button>
+                        </form>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>إعدادات الأمان</h3>
+                        <div class="security-settings">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>تسجيل الدخول الآمن</h4>
+                                    <p>تفعيل التحقق بخطوتين لتسجيل الدخول</p>
+                                </div>
+                                <div class="setting-toggle">
+                                    <input type="checkbox" id="two-factor" class="toggle-input">
+                                    <label for="two-factor" class="toggle-label"></label>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>تسجيل محاولات الدخول</h4>
+                                    <p>تسجيل جميع محاولات تسجيل الدخول</p>
+                                </div>
+                                <div class="setting-toggle">
+                                    <input type="checkbox" id="login-logs" class="toggle-input" checked>
+                                    <label for="login-logs" class="toggle-label"></label>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>إنهاء الجلسات النشطة</h4>
+                                    <p>إنهاء جميع الجلسات النشطة على الأجهزة الأخرى</p>
+                                </div>
+                                <button class="btn btn-outline btn-danger" onclick="endAllSessions()">إنهاء الجلسات</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications Settings -->
+                <div class="settings-tab" id="notifications-tab">
+                    <div class="settings-section">
+                        <h3>إعدادات الإشعارات</h3>
+                        <div class="notification-settings">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>إشعارات الطلبات الجديدة</h4>
+                                    <p>استلام إشعار عند وجود طلب جديد</p>
+                                </div>
+                                <div class="setting-toggle">
+                                    <input type="checkbox" id="new-order-notif" class="toggle-input" checked>
+                                    <label for="new-order-notif" class="toggle-label"></label>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>إشعارات المخزون المنخفض</h4>
+                                    <p>استلام إشعار عند نفاد المنتجات</p>
+                                </div>
+                                <div class="setting-toggle">
+                                    <input type="checkbox" id="low-stock-notif" class="toggle-input" checked>
+                                    <label for="low-stock-notif" class="toggle-label"></label>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>إشعارات عبر البريد الإلكتروني</h4>
+                                    <p>استلام إشعارات على بريدك الإلكتروني</p>
+                                </div>
+                                <div class="setting-toggle">
+                                    <input type="checkbox" id="email-notif" class="toggle-input">
+                                    <label for="email-notif" class="toggle-label"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appearance Settings -->
+                <div class="settings-tab" id="appearance-tab">
+                    <div class="settings-section">
+                        <h3>مظهر لوحة التحكم</h3>
+                        <div class="appearance-settings">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>الوضع المظلم</h4>
+                                    <p>تفعيل الوضع المظلم للوحة التحكم</p>
+                                </div>
+                                <div class="setting-toggle">
+                                    <input type="checkbox" id="dark-mode" class="toggle-input">
+                                    <label for="dark-mode" class="toggle-label"></label>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>حجم الخط</h4>
+                                    <p>اختر حجم الخط المناسب</p>
+                                </div>
+                                <select id="font-size" class="form-select">
+                                    <option value="small">صغير</option>
+                                    <option value="medium" selected>متوسط</option>
+                                    <option value="large">كبير</option>
+                                </select>
+                            </div>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>اللغة</h4>
+                                    <p>اختر لغة لوحة التحكم</p>
+                                </div>
+                                <select id="language" class="form-select">
+                                    <option value="ar" selected>العربية</option>
+                                    <option value="en">English</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Storage Settings -->
+                <div class="settings-tab" id="storage-tab">
+                    <div class="settings-section">
+                        <h3>مساحة التخزين</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>المساحة المستخدمة</label>
+                                <div id="storage-used">— MB</div>
+                            </div>
+                            <div class="form-group">
+                                <label>الحد الأقصى (الحصة)</label>
+                                <div id="storage-quota">— MB</div>
+                            </div>
+                            <div class="form-group">
+                                <label>المتبقي</label>
+                                <div id="storage-remaining">— MB</div>
+                            </div>
+                        </div>
+                        <div class="storage-progress">
+                            <div class="storage-progress-bar" id="storage-progress" style="width:0%"></div>
+                        </div>
+                        <div class="form-row" style="margin-top:1rem;">
+                            <div class="form-group">
+                                <label for="storage-quota-input">تحديد الحصة (MB)</label>
+                                <input type="number" id="storage-quota-input" min="0" placeholder="مثال: 5120" />
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary" id="save-storage-quota">حفظ الحصة</button>
+                                <button class="btn btn-outline" id="refresh-storage">تحديث الحالة</button>
+                            </div>
+                        </div>
+                        <small id="storage-mode-note" class="form-help"></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="js/admin-login.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>

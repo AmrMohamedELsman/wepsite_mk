@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة المنتجات - MK Local Brand</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-dashboard">
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <span class="logo-text">MK</span>
+                    <div class="logo-underline"></div>
+                </div>
+                <span class="brand-name">Local Brand</span>
+            </div>
+            
+            <nav class="admin-nav">
+                <a href="dashboard.html">الرئيسية</a>
+                <a href="products.html" class="active">المنتجات</a>
+                <a href="orders.html">الطلبات</a>
+                <a href="inventory.html">المخزون</a>
+                <a href="settings.html">الإعدادات</a>
+                <a href="#" onclick="AdminAuth.adminLogout()" class="admin-logout">خروج</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Admin Content -->
+    <main class="admin-content">
+        <div class="container">
+            <!-- Products Management -->
+            <div class="admin-table">
+                <div class="table-header">
+                    <h2 class="table-title">إدارة المنتجات</h2>
+                    <button class="btn-add" onclick="showAddProductModal()">
+                        <span>➕</span>
+                        إضافة منتج جديد
+                    </button>
+                </div>
+                <div class="table-responsive">
+                    <table id="products-table">
+                        <thead>
+                            <tr>
+                                <th>الصورة</th>
+                                <th>الاسم</th>
+                                <th>التصنيف</th>
+                                <th>السعر</th>
+                                <th>المخزون</th>
+                                <th>مميز</th>
+                                <th>التاريخ</th>
+                                <th>الإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="products-body">
+                            <!-- Products will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add/Edit Product Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-overlay" onclick="closeProductModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">إضافة منتج جديد</h2>
+                <button class="modal-close" onclick="closeProductModal()">&times;</button>
+            </div>
+            <form id="product-form" class="admin-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="product-name">اسم المنتج *</label>
+                        <input type="text" id="product-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-category">التصنيف</label>
+                        <select id="product-category" name="category">
+                            <option value="">اختر التصنيف</option>
+                            <option value="قمصان">قمصان</option>
+                            <option value="بناطيل">بناطيل</option>
+                            <option value="اكسسوارات">اكسسوارات</option>
+                            <option value="جاكيتات">جاكيتات</option>
+                            <option value="احذية">احذية</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="product-price">السعر (ريال) *</label>
+                        <input type="number" id="product-price" name="price" step="0.01" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-stock">المخزون *</label>
+                        <input type="number" id="product-stock" name="stock" min="0" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="product-discount">الخصم (%)</label>
+                        <input type="number" id="product-discount" name="discount" min="0" max="100" step="1" placeholder="مثال: 10">
+                    </div>
+                </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="product-category-new">تصنيف جديد (اختياري)</label>
+                            <input type="text" id="product-category-new" name="category-new" placeholder="أدخل تصنيفاً غير موجود في القائمة">
+                        </div>
+                    </div>
+                
+                <div class="form-group">
+                    <label for="product-description">الوصف *</label>
+                    <textarea id="product-description" name="description" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="product-sizes">المقاسات</label>
+                        <input type="text" id="product-sizes" name="sizes" placeholder="مثال: S,M,L,XL">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-colors">الألوان</label>
+                        <input type="text" id="product-colors" name="colors" placeholder="مثال: أبيض,أسود,رمادي">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="product-featured" name="featured">
+                            <span class="checkmark"></span>
+                            منتج مميز
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-image">صور المنتج</label>
+                        <input type="file" id="product-image" name="images" accept="image/*" multiple>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" onclick="closeProductModal()">إلغاء</button>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="btn-text">حفظ المنتج</span>
+                        <span class="btn-loading" style="display: none;">
+                            <span class="loading"></span>
+                            جاري الحفظ...
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="js/admin-login.js"></script>
+    <script src="js/products-admin.js"></script>
+</body>
+</html>

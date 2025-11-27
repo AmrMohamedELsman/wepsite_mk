@@ -1,0 +1,233 @@
+[
+  {
+    "_id": "midgy4mxv0gkrre364p",
+    "name": "test1",
+    "description": "test 1",
+    "price": 500,
+    "images": [
+      "/uploads/products/1764008218615-shopping-(1).webp"
+    ],
+    "category": "قمصان",
+    "stock": 20,
+    "sizes": [
+      "xl",
+      "l",
+      "m"
+    ],
+    "colors": [
+      "red",
+      "black"
+    ],
+    "featured": false,
+    "updatedAt": "2025-11-24T18:16:58.617Z",
+    "createdAt": "2025-11-24T18:16:58.617Z"
+  },
+  {
+    "_id": "mieu23wfh19nj89gyp6",
+    "name": "test2",
+    "description": "tester for test",
+    "price": 600,
+    "images": [
+      "/uploads/products/1764090705468-download.jpeg"
+    ],
+    "category": "tes",
+    "stock": 10,
+    "sizes": [
+      "l",
+      "s",
+      "m"
+    ],
+    "colors": [
+      "red",
+      "black",
+      "gren"
+    ],
+    "featured": false,
+    "updatedAt": "2025-11-25T17:51:28.562Z",
+    "createdAt": "2025-11-25T17:11:45.471Z"
+  },
+  {
+    "_id": "mievou5vissxpqxv5kp",
+    "name": "test3",
+    "description": "test for pans",
+    "price": 1000,
+    "images": [
+      "/uploads/products/1764093445545-download-(2).jpeg"
+    ],
+    "category": "pansss",
+    "stock": 10,
+    "sizes": [
+      "l"
+    ],
+    "colors": [
+      "black"
+    ],
+    "featured": false,
+    "updatedAt": "2025-11-26T21:12:10.361Z",
+    "createdAt": "2025-11-25T17:57:25.555Z",
+    "discountPercent": 0
+  },
+  {
+    "_id": "mievvzrnxe6uaey9ayl",
+    "name": "test4",
+    "description": "test for 5asm",
+    "price": 1000,
+    "images": [
+      "/uploads/products/1764093779410-shopping.webp"
+    ],
+    "category": "بناطيل",
+    "stock": 10,
+    "sizes": [
+      "l",
+      "m",
+      "s"
+    ],
+    "colors": [
+      "green"
+    ],
+    "featured": true,
+    "updatedAt": "2025-11-25T18:05:33.015Z",
+    "createdAt": "2025-11-25T18:02:59.411Z"
+  },
+  {
+    "_id": "miew5a00fboqf472oh",
+    "name": "test5",
+    "description": "test for pers",
+    "price": 500,
+    "images": [
+      "/uploads/products/1764094212574-download-(1).jpeg"
+    ],
+    "category": "احذية",
+    "stock": 10,
+    "sizes": [
+      "l"
+    ],
+    "colors": [
+      "mmm"
+    ],
+    "featured": true,
+    "updatedAt": "2025-11-25T18:10:12.576Z",
+    "createdAt": "2025-11-25T18:10:12.576Z"
+  },
+  {
+    "_id": "miewnrxnwwdnx80ccdp",
+    "name": "test6",
+    "description": "teset for tes",
+    "price": 600,
+    "images": [
+      "/uploads/products/1764095075626-images.jpg"
+    ],
+    "category": "اكسسوارات",
+    "stock": 15,
+    "sizes": [
+      "l",
+      "m",
+      "k"
+    ],
+    "colors": [
+      "dfr",
+      "hgy"
+    ],
+    "featured": true,
+    "updatedAt": "2025-11-25T18:24:35.627Z",
+    "createdAt": "2025-11-25T18:24:35.627Z"
+  },
+  {
+    "_id": "mighuy7obboci0n6kgi",
+    "name": "test7",
+    "description": "test for tester",
+    "price": 900,
+    "images": [
+      "/uploads/products/1764191148431-shopping-(4).webp"
+    ],
+    "category": "احذية",
+    "stock": 20,
+    "sizes": [
+      "l",
+      "m",
+      "s"
+    ],
+    "colors": [
+      "red",
+      "green"
+    ],
+    "featured": false,
+    "discountPercent": 20,
+    "updatedAt": "2025-11-26T21:05:48.468Z",
+    "createdAt": "2025-11-26T21:05:48.468Z"
+  },
+  {
+    "_id": "mihs2fadgnt18wyhdyq",
+    "name": "teshert 2",
+    "description": "teshert sdd ffs",
+    "price": 500,
+    "images": [
+      "/uploads/products/1764268759499-whatsapp-image-2025-11-13-at-00.24.48_7665c7fe.jpg",
+      "/uploads/products/1764268759503-whatsapp-image-2025-11-13-at-00.24.50_60b69929.jpg",
+      "/uploads/products/1764268759506-whatsapp-image-2025-11-13-at-00.24.59_3cab145f.jpg",
+      "/uploads/products/1764268759509-whatsapp-image-2025-11-13-at-00.24.59_99e3530d.jpg"
+    ],
+    "category": "teshert",
+    "stock": 20,
+    "sizes": [
+      "l",
+      "m",
+      "n"
+    ],
+    "colors": [
+      "wight"
+    ],
+    "featured": false,
+    "discountPercent": 20,
+    "updatedAt": "2025-11-27T18:39:19.525Z",
+    "createdAt": "2025-11-27T18:39:19.525Z"
+  },
+  {
+    "_id": "mihs5fvglxe7444yg8",
+    "name": "teshert3",
+    "description": "hdgfjf jfhfsjs ",
+    "price": 600,
+    "images": [
+      "/uploads/products/1764268900242-whatsapp-image-2025-11-11-at-01.36.06_3b0d0264.jpg",
+      "/uploads/products/1764268900244-whatsapp-image-2025-11-13-at-00.24.10_09d87991.jpg",
+      "/uploads/products/1764268900248-whatsapp-image-2025-11-13-at-00.24.11_2d60fd10.jpg"
+    ],
+    "category": "teshert",
+    "stock": 20,
+    "sizes": [
+      "l",
+      "m",
+      "n"
+    ],
+    "colors": [
+      "greeen"
+    ],
+    "featured": false,
+    "discountPercent": 0,
+    "updatedAt": "2025-11-27T18:41:40.252Z",
+    "createdAt": "2025-11-27T18:41:40.252Z"
+  },
+  {
+    "_id": "mihs6c44e5rw24xedju",
+    "name": "teshert4",
+    "description": "ddddddddddddd",
+    "price": 800,
+    "images": [
+      "/uploads/products/1764268941950-whatsapp-image-2025-11-11-at-01.36.04_4b4014ea.jpg"
+    ],
+    "category": "teshert",
+    "stock": 20,
+    "sizes": [
+      "l",
+      "m",
+      "n"
+    ],
+    "colors": [
+      "wight"
+    ],
+    "featured": true,
+    "discountPercent": 10,
+    "updatedAt": "2025-11-27T18:42:22.036Z",
+    "createdAt": "2025-11-27T18:42:22.036Z"
+  }
+]

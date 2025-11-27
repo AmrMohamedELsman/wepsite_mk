@@ -1,0 +1,10 @@
+[
+  {
+    "_id": "admin-001",
+    "username": "admin",
+    "password": "$2a$10$0K8I8Gpvqz4QngGSQFAhdOrHZWWors6jXIcuWE47xZx34swyAsVK2",
+    "email": "admin@mk-local.com",
+    "role": "super_admin",
+    "createdAt": "2025-11-23T17:24:33.698Z"
+  }
+]

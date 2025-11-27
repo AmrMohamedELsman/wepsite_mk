@@ -1,0 +1,28 @@
+# Node and environment
+node_modules/
+.env
+.env.local
+.env.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS and editor cruft
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Build and temp
+dist/
+build/
+coverage/
+tmp/
+*.tmp
+
+# Supabase local artifacts
+supabase/
+
+# Images cache or generated
+*.cache
+

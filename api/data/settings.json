@@ -1,0 +1,28 @@
+{
+  "store": {
+    "name": "MK Local Brand",
+    "description": "متجر ملابس محلي متخصص في تقديم أحدث صيحات الموضة بجودة عالية",
+    "phone": "",
+    "email": "",
+    "address": ""
+  },
+  "orders": {
+    "prefix": "O",
+    "minAmount": 5,
+    "deliveryFee": 0,
+    "autoConfirm": false
+  },
+  "notifications": {
+    "newOrder": true,
+    "lowStock": true,
+    "email": false
+  },
+  "appearance": {
+    "darkMode": false,
+    "fontSize": "medium",
+    "language": "ar"
+  },
+  "storage": {
+    "quotaMB": 0
+  }
+}

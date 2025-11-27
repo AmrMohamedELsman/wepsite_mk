@@ -1,0 +1,28 @@
+[
+  {
+    "_id": "miewwpij0vyfm43b0p8",
+    "productId": "midgy4mxv0gkrre364p",
+    "orderCode": "ORD-1764095492395",
+    "quantity": 1,
+    "customerName": "amr elsman",
+    "customerPhone": "01287246427",
+    "customerEmail": "",
+    "status": "confirmed",
+    "totalAmount": 500,
+    "orderDate": "2025-11-25T18:31:32.395Z"
+  },
+  {
+    "_id": "mihsbd8937jtvwsd0zo",
+    "productId": "mihs6c44e5rw24xedju",
+    "orderCode": "O156P4P",
+    "productName": "teshert4",
+    "productPrice": 800,
+    "quantity": 1,
+    "customerName": "ahmed",
+    "customerPhone": "0125485455",
+    "customerEmail": "",
+    "status": "confirmed",
+    "totalAmount": 720,
+    "orderDate": "2025-11-27T18:46:16.761Z"
+  }
+]

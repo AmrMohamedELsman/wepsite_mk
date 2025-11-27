@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK Local Brand - ملابس محلية بجودة عالية</title>
+    <meta name="description" content="متجر MK local brsnd للملابس المحلية عالية الجودة بتصميمات فريدة">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <div class="logo">
+                        <span class="logo-text">MK</span>
+                        <div class="logo-underline"></div>
+                    </div>
+                    <span class="brand-name">Local Brand</span>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">الرئيسية</a></li>
+                    <li><a href="#products" class="nav-link">المنتجات</a></li>
+                    <li><a href="#categories" class="nav-link">التصنيفات</a></li>
+                    <li><a href="#about" class="nav-link">من نحن</a></li>
+                    <li><a href="#contact" class="nav-link">اتصل بنا</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="btn-admin" onclick="window.location.href='admin/login.html'">دخول الإدارة</button>
+                    <div class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text">
+                    <h1 class="hero-title">MK Local Brand</h1>
+                    <p class="hero-subtitle">ملابس محلية بجودة عالية وتصميمات فريدة</p>
+                    <div class="hero-actions">
+                        <a href="#products" class="btn btn-primary">تصفح المنتجات</a>
+                        <a href="#categories" class="btn btn-secondary">اكتشف التصنيفات</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-logo-large">
+                <span class="logo-text-large">MK</span>
+                <div class="logo-underline-large"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <h2 class="section-title">تصنيفاتنا</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-category="قمصان">
+                    <div class="category-icon">👔</div>
+                    <h3>قمصان</h3>
+                    <p>قمصان عالية الجودة بتصميمات عصرية</p>
+                </div>
+                <div class="category-card" data-category="بناطيل">
+                    <div class="category-icon">👖</div>
+                    <h3>بناطيل</h3>
+                    <p>بناطيل مريحة وعملية</p>
+                </div>
+                <div class="category-card" data-category="اكسسوارات">
+                    <div class="category-icon">👜</div>
+                    <h3>اكسسوارات</h3>
+                    <p>اكسسوارات مميزة تكمل إطلالتك</p>
+                </div>
+                <div class="category-card" data-category="جاكيتات">
+                    <div class="category-icon">🧥</div>
+                    <h3>جاكيتات</h3>
+                    <p>جاكيتات أنيقة للموسم</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">منتجات مميزة</h2>
+            <div class="products-grid" id="featured-products">
+                <!-- Products will be loaded here via JavaScript -->
+            </div>
+            <div class="text-center">
+                <a href="products.html" class="btn btn-outline">عرض جميع المنتجات</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">عن MK Local Brand</h2>
+                    <p>نحن علامة تجارية محلية متخصصة في تصميم وإنتاج ملابس عالية الجودة بأسلوب عصري ومريح. نسعى لتقديم منتجات فريدة تعكس شخصيتك وتمنحك الثقة في كل خطوة.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">✨</div>
+                            <h4>جودة عالية</h4>
+                            <p>نستخدم أفضل الخامات لضمان راحتك وجودة المنتج</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🎨</div>
+                            <h4>تصميم فريد</h4>
+                            <p>تصميمات حصرية تعكس أحدث صيحات الموضة</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🏪</div>
+                            <h4>محلي الصنع</h4>
+                            <p>نفتخر بكوننا علامة تجارية محلية</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">اتصل بنا</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>العنوان</h4>
+                            <p>مصر، الإسكندرية</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>واتساب</h4>
+                            <div class="social-links">
+                                <a class="social-link social-whatsapp" href="https://wa.me/201557551875" target="_blank" rel="noopener">
+                                    <span class="social-icon">💬</span>
+                                    <span class="social-label">01557551875</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>البريد الإلكتروني</h4>
+                            <p>info@mk-local.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🔗</div>
+                        <div>
+                            <h4>روابط التواصل</h4>
+                            <div class="social-links">
+                                <a class="social-link social-tiktok" href="https://www.tiktok.com/@mk_local_brand?_t=ZS-8zHoVcmljJo&_r=1" target="_blank" rel="noopener">
+                                    <span class="social-icon">🎵</span>
+                                    <span class="social-label">TikTok</span>
+                                </a>
+                                <a class="social-link social-instagram" href="https://www.instagram.com/k_st0re1/profilecard/?igsh=MWNqZzJna2d0eGl0dA==" target="_blank" rel="noopener">
+                                    <span class="social-icon">📸</span>
+                                    <span class="social-label">Instagram</span>
+                                </a>
+                                <a class="social-link social-facebook" href="https://www.facebook.com/share/1BAkavJrQC/?mibextid=wwXIfr" target="_blank" rel="noopener">
+                                    <span class="social-icon">📘</span>
+                                    <span class="social-label">Facebook</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="الاسم" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="البريد الإلكتروني" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="الرسالة" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-text">MK</span>
+                        <div class="logo-underline"></div>
+                    </div>
+                    <span class="brand-name">Local Brand</span>
+                    <p>ملابس محلية بجودة عالية</p>
+                </div>
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#products">المنتجات</a></li>
+                        <li><a href="#categories">التصنيفات</a></li>
+                        <li><a href="#about">من نحن</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>تواصل معنا</h4>
+                    <p>info@mk-local.com</p>
+                    <div class="social-links">
+                        <a class="social-link social-whatsapp" href="https://wa.me/201557551875" target="_blank" rel="noopener">
+                            <span class="social-icon">💬</span>
+                            <span class="social-label">WhatsApp</span>
+                        </a>
+                        <a class="social-link social-tiktok" href="https://www.tiktok.com/@mk_local_brand?_t=ZS-8zHoVcmljJo&_r=1" target="_blank" rel="noopener">
+                            <span class="social-icon">🎵</span>
+                            <span class="social-label">TikTok</span>
+                        </a>
+                        <a class="social-link social-instagram" href="https://www.instagram.com/k_st0re1/profilecard/?igsh=MWNqZzJna2d0eGl0dA==" target="_blank" rel="noopener">
+                            <span class="social-icon">📸</span>
+                            <span class="social-label">Instagram</span>
+                        </a>
+                        <a class="social-link social-facebook" href="https://www.facebook.com/share/1BAkavJrQC/?mibextid=wwXIfr" target="_blank" rel="noopener">
+                            <span class="social-icon">📘</span>
+                            <span class="social-label">Facebook</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-partner">
+                    <h4>منفّذ الموقع</h4>
+                    <div class="codevia-brand">
+                        <span class="codevia-logo">
+                            <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect x="3" y="3" width="22" height="22" rx="6" fill="#ff6f2c"/>
+                                <path d="M18 9h-6c-3 0-5 2.2-5 5s2 5 5 5h6" stroke="#1fd1c2" stroke-width="2" fill="none"/>
+                                <circle cx="8" cy="10" r="1" fill="#ffcf33"/>
+                                <circle cx="20" cy="18" r="1" fill="#ffcf33"/>
+                            </svg>
+                        </span>
+                        <span class="codevia-name">Codevia</span>
+                    </div>
+                    <p>نبني مستقبلك الرقمي</p>
+                    <div class="social-links">
+                        <a class="social-link" href="tel:01040180521"><span class="social-icon">📞</span><span class="social-label">01040180521</span></a>
+                        <a class="social-link" href="https://www.tiktok.com/@codevia6?_r=1&_t=ZS-91jSYtcd78z" target="_blank" rel="noopener"><span class="social-icon">🎵</span><span class="social-label">TikTok</span></a>
+                        <a class="social-link" href="https://www.facebook.com/share/1HbndGCzZz/" target="_blank" rel="noopener"><span class="social-icon">📘</span><span class="social-label">Facebook</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>2025 codevia . جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

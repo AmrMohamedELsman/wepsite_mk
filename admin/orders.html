@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الطلبات - MK Local Brand</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-dashboard">
+    <header class="admin-header">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <span class="logo-text">MK</span>
+                    <div class="logo-underline"></div>
+                </div>
+                <span class="brand-name">Local Brand</span>
+            </div>
+            <nav class="admin-nav">
+                <a href="dashboard.html">الرئيسية</a>
+                <a href="products.html">المنتجات</a>
+                <a href="orders.html" class="active">الطلبات</a>
+                <a href="inventory.html">المخزون</a>
+                <a href="settings.html">الإعدادات</a>
+                <a href="#" onclick="AdminAuth.adminLogout()" class="admin-logout">خروج</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="admin-content">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">إدارة الطلبات</h1>
+                <div class="header-actions">
+                    <select id="status-filter" class="form-select">
+                        <option value="">جميع الحالات</option>
+                        <option value="pending">قيد الانتظار</option>
+                        <option value="confirmed">تم التأكيد</option>
+                        <option value="processing">قيد المعالجة</option>
+                        <option value="shipped">تم الشحن</option>
+                        <option value="delivered">تم التوصيل</option>
+                        <option value="cancelled">تم الإلغاء</option>
+                    </select>
+                    <button class="btn btn-outline" id="refresh-orders">🔄 تحديث</button>
+                </div>
+            </div>
+
+                <div class="admin-table">
+                    <div class="table-header">
+                        <h2 class="table-title">قائمة الطلبات</h2>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="orders-table">
+                            <thead>
+                                <tr>
+                                    <th>رقم الطلب</th>
+                                    <th>العميل</th>
+                                    <th>الهاتف</th>
+                                    <th>المنتج</th>
+                                    <th>الكمية</th>
+                                    <th>الإجمالي</th>
+                                    <th>الحالة</th>
+                                    <th>التاريخ</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Order Details Modal -->
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="order-modal-title">تفاصيل الطلب</h3>
+                <span class="close" onclick="closeOrderModal()">&times;</span>
+            </div>
+            <div class="modal-body" id="order-modal-body">
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="js/admin-login.js"></script>
+    <script src="js/orders.js"></script>
+</body>
+</html>
