@@ -8,6 +8,7 @@ const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const multer = require('multer');
+const { put } = require('@vercel/blob');
 
 // Load environment variables
 dotenv.config();
@@ -192,10 +193,11 @@ const FileDatabase = require('./database');
 const fileDb = new FileDatabase();
 
 // Uploads configuration
+const isVercel = !!process.env.VERCEL;
 const UPLOADS_DIR = path.join(__dirname, '..', 'uploads', 'products');
-fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+try { fs.mkdirSync(UPLOADS_DIR, { recursive: true }); } catch {}
 
-const storage = multer.diskStorage({
+const storage = isVercel ? multer.memoryStorage() : multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, UPLOADS_DIR);
     },
@@ -364,7 +366,25 @@ app.post('/api/admin/login', async (req, res) => {
 app.post('/api/admin/products', authenticateToken, uploadProducts, async (req, res) => {
     try {
         const body = req.body || {};
-        const imagePaths = Array.isArray(req.files) ? req.files.map(f => `/uploads/products/${f.filename}`) : [];
+        let imagePaths = [];
+        if (Array.isArray(req.files) && req.files.length) {
+            if (isVercel && process.env.BLOB_READ_WRITE_TOKEN) {
+                for (const f of req.files) {
+                    try {
+                        const ext = path.extname(f.originalname) || '';
+                        const base = path.basename(f.originalname, ext).replace(/\s+/g, '-').toLowerCase();
+                        const key = `products/${Date.now()}-${base}${ext || ''}`;
+                        const result = await put(key, f.buffer, { access: 'public', token: process.env.BLOB_READ_WRITE_TOKEN, contentType: f.mimetype });
+                        imagePaths.push(result.url);
+                    } catch {}
+                }
+            } else {
+                if (isVercel && !process.env.BLOB_READ_WRITE_TOKEN) {
+                    return res.status(400).json({ success: false, message: 'Image upload requires BLOB_READ_WRITE_TOKEN on Vercel' });
+                }
+                imagePaths = req.files.map(f => `/uploads/products/${f.filename}`);
+            }
+        }
         const dpRaw = body.discountPercent != null ? body.discountPercent : body.discount;
         const dpNum = Number(dpRaw);
         const discountPercent = Number.isFinite(dpNum) ? Math.max(0, Math.min(100, dpNum)) : 0;
@@ -406,7 +426,25 @@ app.post('/api/admin/products', authenticateToken, uploadProducts, async (req, r
 app.put('/api/admin/products/:id', authenticateToken, uploadProducts, async (req, res) => {
     try {
         const body = req.body || {};
-        const imagePaths = Array.isArray(req.files) ? req.files.map(f => `/uploads/products/${f.filename}`) : [];
+        let imagePaths = [];
+        if (Array.isArray(req.files) && req.files.length) {
+            if (isVercel && process.env.BLOB_READ_WRITE_TOKEN) {
+                for (const f of req.files) {
+                    try {
+                        const ext = path.extname(f.originalname) || '';
+                        const base = path.basename(f.originalname, ext).replace(/\s+/g, '-').toLowerCase();
+                        const key = `products/${Date.now()}-${base}${ext || ''}`;
+                        const result = await put(key, f.buffer, { access: 'public', token: process.env.BLOB_READ_WRITE_TOKEN, contentType: f.mimetype });
+                        imagePaths.push(result.url);
+                    } catch {}
+                }
+            } else {
+                if (isVercel && !process.env.BLOB_READ_WRITE_TOKEN) {
+                    return res.status(400).json({ success: false, message: 'Image upload requires BLOB_READ_WRITE_TOKEN on Vercel' });
+                }
+                imagePaths = req.files.map(f => `/uploads/products/${f.filename}`);
+            }
+        }
         const dpRaw = body.discountPercent != null ? body.discountPercent : body.discount;
         const dpNum = Number(dpRaw);
         const productData = {
@@ -889,9 +927,15 @@ async function initializeDefaultAdmin() {
 }
 
 // Start server
-app.listen(PORT, async () => {
-    console.log(`🚀 Server running on port ${PORT}`);
-    await initializeDefaultAdmin();
-});
+if (!isVercel) {
+    app.listen(PORT, async () => {
+        console.log(`🚀 Server running on port ${PORT}`);
+        await initializeDefaultAdmin();
+    });
+} else {
+    (async () => {
+        try { await initializeDefaultAdmin(); } catch {}
+    })();
+}
 
 module.exports = { app, Product, Admin, Order, fileDb };
