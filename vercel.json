@@ -4,6 +4,12 @@
     { "src": "api/index.js", "use": "@vercel/node" }
   ],
   "rewrites": [
+    { "source": "/", "destination": "/index.html" },
     { "source": "/api/:path*", "destination": "/api/index.js" }
+  ],
+  "redirects": [
+    { "source": "/products", "destination": "/products.html" },
+    { "source": "/admin/login", "destination": "/admin/login.html" },
+    { "source": "/admin/dashboard", "destination": "/admin/dashboard.html" }
   ]
 }
