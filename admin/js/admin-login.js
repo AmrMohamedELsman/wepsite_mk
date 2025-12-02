@@ -121,11 +121,23 @@ async function performLogin(username, password) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
     });
-    const data = await res.json();
+    let data;
+    const ct = res.headers.get('content-type') || '';
+    if (ct.includes('application/json')) {
+        try {
+            data = await res.json();
+        } catch {
+            const text = await res.text();
+            throw new Error(text || 'استجابة غير متوقعة من الخادم');
+        }
+    } else {
+        const text = await res.text();
+        throw new Error(text || `HTTP ${res.status}`);
+    }
     if (!res.ok || !data.success) {
         throw new Error(data.message || 'فشل تسجيل الدخول');
     }
-    return data; // { success, token, user }
+    return data;
 }
 
 // Store admin authentication
