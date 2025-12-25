@@ -3,9 +3,21 @@
   "builds": [
     { "src": "api/index.js", "use": "@vercel/node" }
   ],
+  "functions": {
+    "api/index.js": {
+      "includeFiles": [
+        "index.html",
+        "products.html",
+        "css/**",
+        "js/**",
+        "admin/**",
+        "uploads/**"
+      ]
+    }
+  },
   "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/api/:path*", "destination": "/api/index.js" }
+    { "source": "/api/:path*", "destination": "/api/index.js" },
+    { "source": "/:path*", "destination": "/api/index.js" }
   ],
   "redirects": [
     { "source": "/products", "destination": "/products.html" },

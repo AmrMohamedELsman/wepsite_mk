@@ -2,7 +2,7 @@
   {
     "_id": "admin-001",
     "username": "admin",
-    "password": "$2a$10$0K8I8Gpvqz4QngGSQFAhdOrHZWWors6jXIcuWE47xZx34swyAsVK2",
+    "password": "$2a$10$9u5fDC9UHa.XQ5j9KUW2hehygOWUV1ySo3A.8HVHbMBv9KgdUm2mO",
     "email": "admin@mk-local.com",
     "role": "super_admin",
     "createdAt": "2025-11-23T17:24:33.698Z"
