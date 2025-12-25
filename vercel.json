@@ -5,14 +5,7 @@
   ],
   "functions": {
     "api/index.js": {
-      "includeFiles": [
-        "index.html",
-        "products.html",
-        "css/**",
-        "js/**",
-        "admin/**",
-        "uploads/**"
-      ]
+      "includeFiles": "{index.html,products.html,css/**,js/**,admin/**,uploads/**}"
     }
   },
   "rewrites": [
