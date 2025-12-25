@@ -19,7 +19,8 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '..')));
+const STATIC_ROOT = (process.env.VERCEL ? __dirname : path.join(__dirname, '..'));
+app.use(express.static(STATIC_ROOT));
 
 // MongoDB connection with error handling
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://mk-local-brand:mk-local-brand@mk-local-brand.rtq1nys.mongodb.net/mk-local-brand?retryWrites=true&w=majority&appName=mk-local-brand';
@@ -855,19 +856,19 @@ app.get('/api/admin/dashboard', authenticateToken, async (req, res) => {
 
 // Serve static files
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'index.html'));
+    res.sendFile(path.join(STATIC_ROOT, 'index.html'));
 });
 
 app.get('/products.html', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'products.html'));
+    res.sendFile(path.join(STATIC_ROOT, 'products.html'));
 });
 
 app.get('/admin/login.html', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'admin', 'login.html'));
+    res.sendFile(path.join(STATIC_ROOT, 'admin', 'login.html'));
 });
 
 app.get('/admin/dashboard.html', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'admin', 'dashboard.html'));
+    res.sendFile(path.join(STATIC_ROOT, 'admin', 'dashboard.html'));
 });
 
 // Error handling middleware
